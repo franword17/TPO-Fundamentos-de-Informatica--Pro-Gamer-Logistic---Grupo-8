@@ -12,7 +12,29 @@ def menu ():
 
     return op
 
-def nuevoproducto():
+def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca):
+    id=input("Ingrese el ID del producto:")
+    while id in lista_id:
+        print("Error este ID ya existe para otro producto.Por favor ingrese otro ID:")
+        id = input("Ingrese el ID del producto:")
+    descripcion=input("Ingrese la descripcion del producto:")
+    categoria=input("Ingrese la cantegoria del producto:")
+    precio=float(input("Ingrese el precio del producto:"))
+    while precio <0:
+        print("Error el precio ingresado no es valido.Por favor ingrese otro precio:")
+        precio = float(input("Ingrese el precio del producto:"))
+    stock=int(input("Ingrese el stock del producto:"))
+    while stock<0:
+        print("Error, el stock ingresado no es valido.Por favor ingrese otro:")
+        stock = int(input("Ingrese el stock del producto:"))
+    marca=input("Ingrese la marca del producto:")
+    lista_id.append(id)
+    lista_desc.append(descripcion)
+    lista_cat.append(categoria)
+    lista_precio.append(precio)
+    lista_stock.append(stock)
+    Lista_marca.append(marca)
+    return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca
     '''da de alta un producto nuevo'''
 
 def eliminarproducto():
