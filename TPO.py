@@ -1,12 +1,12 @@
 import functionsTPO
 
 def main():
-    lstID = []
-    lstdesc = []
-    lstcat = []
-    lstprecio = []
-    lststock = []
-    lstmarca = []
+    lstID = ["MON001" , "STL245" , "RGB120"]
+    lstdesc = ["Monitor Gamer 240Hz", "Teclado Mecánico RGB" , "Silla Ergonómica Pro"]
+    lstcat = ["Monitores" , "Periféricos" , "Sillas"]
+    lstprecio = [350.99 , 55.99 , 499.99]
+    lststock = [4, 2 , 8]
+    lstmarca = ["ASUS" , "HyperX" , "Corsair"]
 
     op = functionsTPO.menu()
     while op != 8: 
