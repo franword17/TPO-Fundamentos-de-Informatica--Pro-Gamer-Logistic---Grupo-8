@@ -37,8 +37,33 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_m
     return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca
     '''da de alta un producto nuevo'''
 
-def eliminarproducto():
-    '''elimina un producto del sistema'''
+def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
+    '''Elimina un producto según su identificador'''
+    busqueda = input("Ingrese el identificador del producto que desea eliminar: ")
+    posicion = 0
+    for i in range(len(lista_id)):       
+        if lista_id[i] == busqueda:
+            posicion = i
+    if lista_id[posicion] == busqueda:      
+        print("Se encontró el producto: ",lista_desc[posicion],"\n")        
+        if lista_stock[posicion] == 0:            
+            confirmar = str(input("¿Está seguro que desea eliminar el producto seleccionado?\n¿Si o No?")).upper()
+            if confirmar == "SI" or confirmar == "SÍ":
+                lista_id.pop(posicion)
+                lista_stock.pop(posicion)
+                lista_desc.pop(posicion)
+                lista_cat.pop(posicion)
+                lista_precio.pop(posicion)
+                lista_marca.pop(posicion)
+                print("El producto ha sido eliminado correctamente.")                
+            elif confirmar == "NO":
+                print("El producto no fue eliminado.")       
+        else:
+            
+            print("El producto encontrado, no puede ser eliminado porque aún tiene stock.")    
+    else:
+
+        print("No se encontró el identificador de producto ingresado.")
 
 def modificacion():
     '''modifica un elemento del sistema'''
