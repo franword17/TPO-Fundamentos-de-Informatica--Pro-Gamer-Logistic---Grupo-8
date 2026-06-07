@@ -7,7 +7,7 @@ def menu ():
     print ("8: finalizar")
 
     op = int(input("ingrese el numero del procedimiento que desea realizar: "))
-    while op > 4 and op < 1 and op == 8:
+    while op > 4 and op < 1 and op != 8:
         op = int(input("porfavor ingrese una opcion valida: "))
 
     return op

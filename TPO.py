@@ -8,7 +8,7 @@ def main():
     lststock = []
     lstmarca = []
 
-    op = functionsTPO.menu
+    op = functionsTPO.menu()
     while op != 8: 
         
         if op == 1:
@@ -20,7 +20,7 @@ def main():
         elif op == 4:
             #informe general del sistema
             
-        op = functionsTPO.menu
+        op = functionsTPO.menu()
         
     print ("usted finalizo la ejecucion del sistema")
 main()
