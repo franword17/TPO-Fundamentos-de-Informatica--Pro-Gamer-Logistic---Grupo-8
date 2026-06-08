@@ -65,8 +65,83 @@ def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lis
 
         print("No se encontró el identificador de producto ingresado.")
 
-def modificacion():
+def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca):
     '''modifica un elemento del sistema'''
+    descripcion = int(input("Ingrese la descripción del producto: "))
+    
+    while descripcion not in lista_desc codigos:
+        print("Error, el producto no existe")
+        descripcion = int(input("Ingrese otra descripción: "))
+
+    for i in range(len(lista_descs)):
+
+        if descripcion == lista_desc[i]:
+
+            print("1-Modificar stock")
+
+            print("2-Modificar categoria")
+
+            print("3-Modificar precio")
+
+            print("4-Modificar marca")
+
+            print("5-Modificar id")
+
+            print("0-Salir")
+
+            opcion = int(input("Ingrese opción"))
+
+            if opcion == 1:
+
+                cantidad = int(input("Ingrese nueva cantidad de stock: "))
+
+                while cantidad < 0:
+
+                    print("Error, debe ingresar un numero positivo")
+                    cantidad = int(input("Ingrese nueva cantidad: "))
+                 
+                 lista_stock[i] = cantidad
+            
+            elif opcion == 2: 
+
+                lista_cat[i] = input("Ingrese nueva categoria: ")
+            
+            elif opcion == 3:
+
+                precio = float(input("Ingrese precio nuevo: "))
+
+                while precio <= 0:
+                    print("El precio no puede ser negativo")
+                    
+                    precio = float(input("Nuevo precio: "))
+                
+                lista_precio[i] = precio
+            
+            elif opcion == 4: 
+                
+                Lista_marca[i] = input("Ingrese nueva marca: ")
+
+            elif opcion == 5:
+                
+                id = int(input("Ingrese nuevo id: "))
+
+                while id in lista_id:
+
+                    print("Error, id ya registrado")
+
+                    id = int(input("Ingrese otro id: "))
+
+                lista_id[i] = id
+            
+            elif opcion == 0:
+                
+                print("Modificación terminada")
+            
+            else:
+                
+                print("Opción inválida")
+                
+    return (lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca)
 
 def informe(lstid,lstdesc,lstcat,lstprecio,lststock,lstmarca):
     '''visualiza todos los datos del sistema y los ordena de mayor a menor segun el stock'''
