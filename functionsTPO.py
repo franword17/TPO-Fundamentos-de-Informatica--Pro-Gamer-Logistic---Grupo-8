@@ -69,7 +69,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_ma
     '''modifica un elemento del sistema'''
     descripcion = int(input("Ingrese la descripción del producto: "))
     
-    while descripcion not in lista_desc codigos:
+    while descripcion not in lista_desc:
         print("Error, el producto no existe")
         descripcion = int(input("Ingrese otra descripción: "))
 
