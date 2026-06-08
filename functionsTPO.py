@@ -73,7 +73,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_ma
         print("Error, el producto no existe")
         descripcion = int(input("Ingrese otra descripción: "))
 
-    for i in range(len(lista_descs)):
+    for i in range(len(lista_desc)):
 
         if descripcion == lista_desc[i]:
 
