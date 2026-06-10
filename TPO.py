@@ -15,6 +15,7 @@ def main():
             lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.nuevoproducto(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
             #regristrar nuevo prducto
         elif op == 2:
+             lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca =
             #eliminar producto del sistema
         elif op == 3:
             #modifica el stock
