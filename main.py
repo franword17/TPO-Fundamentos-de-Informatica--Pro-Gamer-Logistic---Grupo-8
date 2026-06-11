@@ -17,10 +17,10 @@ def main():
             lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.nuevoproducto(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
             #regristrar nuevo prducto
         elif op == 2:
-             lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.eliminar_productos(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
+            lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.eliminar_producto(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
             #eliminar producto del sistema
         elif op == 3:
-             lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.modificacion(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
+            lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca = functionsTPO.modificacion(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
             #modifica el stock
         elif op == 4:
             functionsTPO.informe(lstID,lstdesc,lstcat,lstprecio,lststock,lstmarca)
