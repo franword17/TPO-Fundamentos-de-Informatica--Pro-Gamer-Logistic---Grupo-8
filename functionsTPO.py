@@ -36,7 +36,7 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_m
     lista_marca.append(marca)
     return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
     '''da de alta un producto nuevo'''
-
+    ''' Parte de: Francisco Bardelli'''
 def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
     '''Elimina un producto según su identificador'''
     busqueda = input("Ingrese el identificador del producto que desea eliminar: ")
