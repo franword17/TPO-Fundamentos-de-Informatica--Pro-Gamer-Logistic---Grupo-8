@@ -1,6 +1,8 @@
 import functionsTPO
 
 def main():
+    '''Función principal del programa: define las listas y ejecuta las funciones'''
+    '''Hecho por: Victoria Rastrelli'''
     lstID = ["MON001" , "STL245" , "RGB120"]
     lstdesc = ["Monitor Gamer 240Hz", "Teclado Mecánico RGB" , "Silla Ergonómica Pro"]
     lstcat = ["Monitores" , "Periféricos" , "Sillas"]
