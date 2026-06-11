@@ -1,5 +1,6 @@
 def menu ():
     '''muestra el menu y devuelve una opcion valida'''
+    '''Hecho por: Maia Capiak'''
     print ("1: Registrar nuevo producto")
     print ("2: eliminar producto")
     print ("3: modificar cantidad de stock")
@@ -36,9 +37,10 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_m
     lista_marca.append(marca)
     return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
     '''da de alta un producto nuevo'''
-    ''' Parte de: Francisco Bardelli'''
+    ''' Hecho por: Francisco Bardelli'''
 def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
     '''Elimina un producto según su identificador'''
+    '''Hecho por: Eugenia De Lillo'''
     busqueda = input("Ingrese el identificador del producto que desea eliminar: ")
     posicion = 0
     for i in range(len(lista_id)):       
@@ -68,6 +70,7 @@ def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lis
 
 def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
     '''modifica un elemento del sistema'''
+    '''Hecho por Candela Brancolini'''
     descripcion = int(input("Ingrese la descripción del producto: "))
     
     while descripcion not in lista_desc:
@@ -146,6 +149,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_ma
 
 def informe(lstid,lstdesc,lstcat,lstprecio,lststock,lstmarca):
     '''visualiza todos los datos del sistema y los ordena de mayor a menor segun el stock'''
+    '''Hecho por: Maia Capiak'''
     for i in range (len(lststock)):
         for j in range (i+1 , len(lststock)):
 
