@@ -12,7 +12,7 @@ def menu ():
 
     return op
 
-def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca):
+def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
     id=input("Ingrese el ID del producto:")
     while id in lista_id:
         print("Error este ID ya existe para otro producto.Por favor ingrese otro ID:")
@@ -33,8 +33,8 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_m
     lista_cat.append(categoria)
     lista_precio.append(precio)
     lista_stock.append(stock)
-    Lista_marca.append(marca)
-    return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca
+    lista_marca.append(marca)
+    return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
     '''da de alta un producto nuevo'''
 
 def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
@@ -55,7 +55,8 @@ def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lis
                 lista_cat.pop(posicion)
                 lista_precio.pop(posicion)
                 lista_marca.pop(posicion)
-                print("El producto ha sido eliminado correctamente.")                
+                print("El producto ha sido eliminado correctamente.")
+                return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
             elif confirmar == "NO":
                 print("El producto no fue eliminado.")       
         else:
@@ -65,7 +66,7 @@ def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lis
 
         print("No se encontró el identificador de producto ingresado.")
 
-def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca):
+def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
     '''modifica un elemento del sistema'''
     descripcion = int(input("Ingrese la descripción del producto: "))
     
@@ -119,7 +120,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_ma
             
             elif opcion == 4: 
                 
-                Lista_marca[i] = input("Ingrese nueva marca: ")
+                lista_marca[i] = input("Ingrese nueva marca: ")
 
             elif opcion == 5:
                 
@@ -141,7 +142,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_ma
                 
                 print("Opción inválida")
                 
-    return (lista_stock,lista_id,lista_desc,lista_cat,lista_precio,Lista_marca)
+    return (lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca)
 
 def informe(lstid,lstdesc,lstcat,lstprecio,lststock,lstmarca):
     '''visualiza todos los datos del sistema y los ordena de mayor a menor segun el stock'''
