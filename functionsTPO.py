@@ -8,12 +8,14 @@ def menu ():
     print ("8: finalizar")
 
     op = int(input("ingrese el numero del procedimiento que desea realizar: "))
-    while op > 4 and op < 1 and op != 8:
+    while (op > 4 or op < 1) and op != 8:
         op = int(input("porfavor ingrese una opcion valida: "))
 
     return op
 
-def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
+def nuevoproducto(lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_marca):
+    '''Da de alta un producto nuevo'''
+    '''Hecho por: Francisco Bardelli'''
     id=input("Ingrese el ID del producto:")
     while id in lista_id:
         print("Error este ID ya existe para otro producto.Por favor ingrese otro ID:")
@@ -35,43 +37,43 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_m
     lista_precio.append(precio)
     lista_stock.append(stock)
     lista_marca.append(marca)
-    return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
-    '''da de alta un producto nuevo'''
-    ''' Hecho por: Francisco Bardelli'''
-def eliminar_producto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
+    return lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_marca
+
+def eliminar_producto(lista_id, lista_desc, lista_cat, lista_precio, lista_stock, lista_marca):
     '''Elimina un producto según su identificador'''
     '''Hecho por: Eugenia De Lillo'''
     busqueda = input("Ingrese el identificador del producto que desea eliminar: ")
-    posicion = 0
-    for i in range(len(lista_id)):       
+    posicion = -1
+    for i in range(len(lista_id)):
         if lista_id[i] == busqueda:
             posicion = i
-    if lista_id[posicion] == busqueda:      
-        print("Se encontró el producto: ",lista_desc[posicion],"\n")        
-        if lista_stock[posicion] == 0:            
-            confirmar = str(input("¿Está seguro que desea eliminar el producto seleccionado?\n¿Si o No?")).upper()
+    if posicion != -1:
+        print("Se encontró el producto:", lista_desc[posicion], "\n")
+        if lista_stock[posicion] == 0:
+            confirmar = input(
+                "¿Está seguro que desea eliminar el producto seleccionado?\n¿Si o No?: ").upper()
             if confirmar == "SI" or confirmar == "SÍ":
                 lista_id.pop(posicion)
-                lista_stock.pop(posicion)
                 lista_desc.pop(posicion)
                 lista_cat.pop(posicion)
                 lista_precio.pop(posicion)
+                lista_stock.pop(posicion)
                 lista_marca.pop(posicion)
                 print("El producto ha sido eliminado correctamente.")
-                return lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca
             elif confirmar == "NO":
-                print("El producto no fue eliminado.")       
+                print("El producto no fue eliminado.")
+            else:
+                print("Opción no válida.")
         else:
-            
-            print("El producto encontrado, no puede ser eliminado porque aún tiene stock.")    
+            print("El producto encontrado no puede ser eliminado porque aún tiene stock.")
     else:
-
         print("No se encontró el identificador de producto ingresado.")
+    return lista_id, lista_desc, lista_cat, lista_precio, lista_stock, lista_marca
 
-def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca):
+def modificacion(lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_marca):
     '''modifica un elemento del sistema'''
     '''Hecho por Candela Brancolini'''
-    descripcion = int(input("Ingrese la descripción del producto: "))
+    descripcion = input("Ingrese la descripción del producto: ")
     
     while descripcion not in lista_desc:
         print("Error, el producto no existe")
@@ -104,7 +106,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_ma
                     print("Error, debe ingresar un numero positivo")
                     cantidad = int(input("Ingrese nueva cantidad: "))
                  
-                 lista_stock[i] = cantidad
+                lista_stock[i] = cantidad
             
             elif opcion == 2: 
 
@@ -127,7 +129,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_ma
 
             elif opcion == 5:
                 
-                id = int(input("Ingrese nuevo id: "))
+                id = input("Ingrese nuevo id: ")
 
                 while id in lista_id:
 
@@ -145,7 +147,7 @@ def modificacion(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_ma
                 
                 print("Opción inválida")
                 
-    return (lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_marca)
+    return (lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_marca)
 
 def informe(lstid,lstdesc,lstcat,lstprecio,lststock,lstmarca):
     '''visualiza todos los datos del sistema y los ordena de mayor a menor segun el stock'''
@@ -210,8 +212,3 @@ def informe(lstid,lstdesc,lstcat,lstprecio,lststock,lstmarca):
     for i in range(len(lststock)):
         print(lstid[i], "\t", lstdesc[i], "\t", lstcat[i], "\t",
             lstprecio[i], "\t", lststock[i], "\t", lstmarca[i])
-
-
-
-
-
