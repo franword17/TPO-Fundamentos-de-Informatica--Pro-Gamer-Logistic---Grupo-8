@@ -19,7 +19,7 @@ def nuevoproducto(lista_stock,lista_id,lista_desc,lista_cat,lista_precio,lista_m
         print("Error este ID ya existe para otro producto.Por favor ingrese otro ID:")
         id = input("Ingrese el ID del producto:")
     descripcion=input("Ingrese la descripcion del producto:")
-    categoria=input("Ingrese la cantegoria del producto:")
+    categoria=input("Ingrese la categoria del producto:")
     precio=float(input("Ingrese el precio del producto:"))
     while precio <0:
         print("Error el precio ingresado no es valido.Por favor ingrese otro precio:")
