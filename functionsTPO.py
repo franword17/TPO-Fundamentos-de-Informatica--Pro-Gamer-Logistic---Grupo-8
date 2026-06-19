@@ -12,11 +12,25 @@ def menu ():
         op = int(input("porfavor ingrese una opcion valida: "))
 
     return op
+def validar_id(ID):
 
+    if len(ID) < 4 or len(ID) > 10:
+        return False
+
+    permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_"
+
+    for caracter in ID:
+        if caracter not in permitidos:
+            return False
+
+    return True
 def nuevoproducto(lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_marca):
     '''Da de alta un producto nuevo'''
     '''Hecho por: Francisco Bardelli'''
     id=input("Ingrese el ID del producto:")
+    while validar_ID(id)==False:
+        print("ID no valido, por favor ingrese otro")
+        id=input("Ingrese el ID del producto:")
     while id in lista_id:
         print("Error este ID ya existe para otro producto.Por favor ingrese otro ID:")
         id = input("Ingrese el ID del producto:")
