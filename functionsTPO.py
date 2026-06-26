@@ -28,7 +28,7 @@ def nuevoproducto(lista_id,lista_desc,lista_cat,lista_precio,lista_stock,lista_m
     '''Da de alta un producto nuevo'''
     '''Hecho por: Francisco Bardelli'''
     id=input("Ingrese el ID del producto:")
-    while validar_ID(id)==False:
+    while validar_id(id)==False:
         print("ID no valido, por favor ingrese otro")
         id=input("Ingrese el ID del producto:")
     while id in lista_id:
